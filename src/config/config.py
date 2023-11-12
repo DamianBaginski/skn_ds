@@ -1,4 +1,9 @@
 from typing import NamedTuple
+from pathlib import Path
+
+
+class Paths(NamedTuple):
+    data_path: Path = Path('../data/Telco Customer Churn.csv')
 
 
 class Columns(NamedTuple):
@@ -30,3 +35,6 @@ class Columns(NamedTuple):
 
     values_to_change = {'Yes': 1, 'Male': 1, 'Female': 0, 'No': 0, 'No internet service': None, 'No phone service': None}
     cols_to_encode = [internet_col, payment_method_col, contract_col]
+    new_cols_with_conds = [has_internet_col, automatic_pay_col, streaming_col, support_col]
+    simple_cols_model = [tenure_col, total_charges_col, monthly_charges_col, phone_service_col, has_internet_col, streaming_col, support_col, senior_col, partner_col]
+    cols_to_scale = [total_charges_col, monthly_charges_col]
